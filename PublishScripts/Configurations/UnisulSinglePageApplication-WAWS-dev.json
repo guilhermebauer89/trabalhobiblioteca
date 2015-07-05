@@ -1,0 +1,21 @@
+{
+    "environmentSettings": {
+        "webSite": {
+            "name": "bibliotecaunisulspa",
+            "location": "Brazil South"
+        },
+        "databases": [
+            {
+                "connectionStringName": "DefaultConnection",
+                "databaseName": "bibliotecaunisulspa_db",
+                "serverName": "xqyq1xq6jd",
+                "user": "Unisul",
+                "password": "",
+                "edition": "",
+                "size": "",
+                "collation": "",
+                "location": "Brazil South"
+            }
+        ]
+    }
+}

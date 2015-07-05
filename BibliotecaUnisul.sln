@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{E2630D51-E985-4020-83B0-CEB2F41CB240}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{900EC25A-AA34-4EBA-A8D7-178160F750A0}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\BibliotecaUnisul-WAWS-dev.json = PublishScripts\Configurations\BibliotecaUnisul-WAWS-dev.json
+		PublishScripts\Configurations\BibliotecaWeb-WAWS-dev-2.json = PublishScripts\Configurations\BibliotecaWeb-WAWS-dev-2.json
+		PublishScripts\Configurations\BibliotecaWeb-WAWS-dev.json = PublishScripts\Configurations\BibliotecaWeb-WAWS-dev.json
+		PublishScripts\Configurations\Teste-WAWS-dev.json = PublishScripts\Configurations\Teste-WAWS-dev.json
+		PublishScripts\Configurations\UnisulSinglePageApplication-WAWS-dev.json = PublishScripts\Configurations\UnisulSinglePageApplication-WAWS-dev.json
+		PublishScripts\Configurations\Website-WAWS-dev.json = PublishScripts\Configurations\Website-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Biblioteca.DB", "Biblioteca.DB\Biblioteca.DB.sqlproj", "{EF5B1F56-B291-47B2-A3D8-531DE2C711B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{3A2D2084-D4F0-4D4A-9872-83CF0EFE5C08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca.Data", "Biblioteca.Data\Biblioteca.Data.csproj", "{D5A0A6DC-520A-4E16-8562-EDB1C0985C89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca.Service", "Biblioteca.Service\Biblioteca.Service.csproj", "{AC095EEF-0C32-4663-A449-0A4947DD5AD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF5B1F56-B291-47B2-A3D8-531DE2C711B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF5B1F56-B291-47B2-A3D8-531DE2C711B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF5B1F56-B291-47B2-A3D8-531DE2C711B9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EF5B1F56-B291-47B2-A3D8-531DE2C711B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF5B1F56-B291-47B2-A3D8-531DE2C711B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF5B1F56-B291-47B2-A3D8-531DE2C711B9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3A2D2084-D4F0-4D4A-9872-83CF0EFE5C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A2D2084-D4F0-4D4A-9872-83CF0EFE5C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A2D2084-D4F0-4D4A-9872-83CF0EFE5C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A2D2084-D4F0-4D4A-9872-83CF0EFE5C08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5A0A6DC-520A-4E16-8562-EDB1C0985C89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5A0A6DC-520A-4E16-8562-EDB1C0985C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5A0A6DC-520A-4E16-8562-EDB1C0985C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5A0A6DC-520A-4E16-8562-EDB1C0985C89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC095EEF-0C32-4663-A449-0A4947DD5AD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC095EEF-0C32-4663-A449-0A4947DD5AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC095EEF-0C32-4663-A449-0A4947DD5AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC095EEF-0C32-4663-A449-0A4947DD5AD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{900EC25A-AA34-4EBA-A8D7-178160F750A0} = {E2630D51-E985-4020-83B0-CEB2F41CB240}
+	EndGlobalSection
+EndGlobal

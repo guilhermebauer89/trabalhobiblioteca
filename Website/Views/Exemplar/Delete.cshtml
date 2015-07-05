@@ -1,0 +1,65 @@
+﻿@model Biblioteca.Data.Exemplar
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Excluir</h2>
+
+<h3>Tem certeza que deseja excluir este registro?</h3>
+<div>
+    <h4>Exemplar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Livro.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Livro.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unidade.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unidade.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Edicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edicao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnoEdicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnoEdicao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Locado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Locado)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ValidationMessage("erro", "", new { @class = "text-danger" })
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

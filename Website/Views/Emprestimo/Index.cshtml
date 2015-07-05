@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Biblioteca.Data.Emprestimo>
+
+@{
+    ViewBag.Title = "Emprestimo";
+}
+
+<h2>Listagem</h2>
+<p>
+    @Html.ActionLink("Cadastrar", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Exemplar.Edicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Exemplar.Livro.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataPrevista)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataDevolucao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorMulta)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Exemplar.Edicao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Exemplar.Livro.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataPrevista)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataDevolucao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorMulta)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdEmprestimo }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.IdEmprestimo }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.IdEmprestimo })
+        </td>
+    </tr>
+}
+
+</table>

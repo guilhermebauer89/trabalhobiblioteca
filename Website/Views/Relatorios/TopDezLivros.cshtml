@@ -1,0 +1,48 @@
+﻿@model Biblioteca.Data.Relatorio.RelatorioEmprestimo
+
+
+<div style="text-align: center;"><h1 style="">Top 10 Livros emprestados</h1></div>
+<br />
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataDe, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-3">
+                @Html.Kendo().DatePicker().Format("dd/MM/yyyy").Name("DataDe").HtmlAttributes(new {@class = "form-control requerid"})
+                @Html.ValidationMessageFor(model => model.DataDe, "", new {@class = "text-danger"})
+            </div>
+            @Html.LabelFor(model => model.DataAte, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-3">
+                @Html.Kendo().DatePicker().Format("dd/MM/yyyy").Name("DataAte").HtmlAttributes(new {@class = "form-control requerid"})
+                @Html.ValidationMessageFor(model => model.DataAte, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Consultar" class="btn btn-default" />
+                @Html.ValidationMessage("erro", "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <fieldset>
+        @(Html.Kendo().Grid(ViewBag.Grid as IEnumerable<Biblioteca.Data.Relatorio.LivrosEmprestadosPorPeriodo>)
+          .Name("grid")
+          .Columns(columns =>
+          {
+              columns.Bound(c => c.NomeLivro);
+              columns.Bound(c => c.Quantidade);
+          })
+          .Sortable(sortable =>
+          {
+              sortable.SortMode(GridSortMode.SingleColumn);
+          })
+          .Filterable()
+          .Scrollable()
+          .DataSource(dataSource => dataSource
+              .Ajax()
+              .Read(read => read.Action("Emprestimo_Read", "Relatorios"))
+          )
+        )
+    </fieldset>
+}

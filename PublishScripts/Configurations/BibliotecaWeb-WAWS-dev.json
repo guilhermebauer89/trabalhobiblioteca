@@ -1,0 +1,21 @@
+{
+    "environmentSettings": {
+        "webSite": {
+            "name": "bibliotecaunisul2015",
+            "location": "Brazil South"
+        },
+        "databases": [
+            {
+                "connectionStringName": "DefaultConnection",
+                "databaseName": "bibliotecaunisul2015_db",
+                "serverName": "xqyq1xq6jd",
+                "user": "Unisul",
+                "password": "",
+                "edition": "",
+                "size": "",
+                "collation": "",
+                "location": "Brazil South"
+            }
+        ]
+    }
+}

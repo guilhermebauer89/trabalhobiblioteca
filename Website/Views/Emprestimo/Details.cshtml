@@ -1,0 +1,66 @@
+﻿@model Biblioteca.Data.Emprestimo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Emprestimo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Exemplar.Edicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exemplar.Edicao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdLivro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdLivro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPrevista)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataPrevista)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDevolucao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataDevolucao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorMulta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorMulta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdEmprestimo }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Avançada - Trabalho Final</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.common-bootstrap.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.bootstrap.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.dataviz.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.dataviz.bootstrap.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="http://cdn.kendostatic.com/2015.1.408/js/kendo.all.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2015.1.408/js/kendo.timezones.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2015.1.408/js/kendo.aspnetmvc.min.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+    <script src="~/scripts/kendo/messages/kendo.messages.pt-br.min.js"></script>
+    <script src="~/scripts/kendo/cultures/kendo.culture.pt-br.min.js"></script>
+    <script src="~/Scripts/theme-chooser.js"></script>
+    <link href="~/Content/styles.css" rel="stylesheet" />
+
+    <script>
+        kendo.culture("pt-BR");
+    </script>
+    <!--[if lt IE 9]>
+        <script src="vendor/html5shiv.js"></script>
+        <script src="vendor/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+
+    <header>
+        <div class="container" class="row">
+            <h1 class="col-sm-3 hidden-sm"><a href="/home">Biblioteca Unisul</a></h1>
+            <h1 class="col-sm-3 visible-sm"></h1>
+
+        </div>
+    </header>
+    <div class="container">
+        @(Html.Kendo().Menu()
+          .Name("menu")
+          .Items(children =>
+          {
+              children.Add().Text("CRUD's")
+                  .Items(innerChildren =>
+                  {
+                      innerChildren.Add().Text("Autor").Url("/Autor");
+                      innerChildren.Add().Text("Curso").Url("/Curso");
+                      innerChildren.Add().Text("Departamento").Url("/Departamento");
+                      innerChildren.Add().Text("Editora").Url("/Editora");
+                      innerChildren.Add().Text("Empréstimo").Url("/Emprestimo");
+                      innerChildren.Add().Text("Exemplar").Url("/Exemplar");
+                      innerChildren.Add().Text("Livro").Url("/Livro");
+                      innerChildren.Add().Text("Perfil").Url("/PerfilUsuario");
+                      innerChildren.Add().Text("Unidade").Url("/Unidade");
+                      innerChildren.Add().Text("Usúario").Url("/Usuario");
+                      innerChildren.Add().Text("Curso - Usúario").Url("/UsuarioCurso");
+                  });
+
+              children.Add().Text("Relatorios")
+                  .Items(innerChildren =>
+                  {
+                      innerChildren.Add().Text("Livros emprestados por período").Url("/Relatorios/Index");
+                      innerChildren.Add().Text("Livros emprestados por usuário em um período").Url("/Relatorios/LivrosPorPeriodoUsuario");
+                      innerChildren.Add().Text("Top 10 livros mais emprestados em um período pesquisado").Url("/Relatorios/TopDezLivros");
+                      innerChildren.Add().Text("Usuário que mais pegou livro em um período").Url("/Relatorios/TopUsuarioLivro");
+                      innerChildren.Add().Text("Livros em atraso por usuário e/ou período").Url("/Relatorios/LivrosAtrasados");
+                  });
+          }
+          )
+        )
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <script>
+        $(document).ready(function () {
+            changeFontSize();
+
+            $("#theme-list, #dimensions-list, #font-size-list").addClass("ra-list");
+
+            $("#configure").on("click", function (e) {
+                $("#configurator-wrap").toggleClass("hidden-xs");
+                e.preventDefault();
+            });
+        })
+
+        function onDimensionChange() {
+            window.kendoThemeChooser.changeCommon(this.value(), true);
+        }
+
+        function onThemeChange() {
+            theme = this.value();
+            window.kendoThemeChooser.changeTheme(theme, true);
+            initCharts(theme);
+        }
+
+        function changeFontSize() {
+            var value = $("#font-size").kendoDropDownList("value");
+            $("body").css("font-size", value + "px");
+        }
+
+        function resizeTabStripContent() {
+            kendo.resize("#tabstrip");
+        }
+
+        $(window).resize(resizeTabStripContent);
+    </script>
+</body>
+</html>

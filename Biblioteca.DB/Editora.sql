@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Editora]
+(
+	[Id] INT NOT NULL IDENTITY, 
+    [Nome] NCHAR(40) NOT NULL,
+	CONSTRAINT [PK_Editora] PRIMARY KEY ([Id])
+)

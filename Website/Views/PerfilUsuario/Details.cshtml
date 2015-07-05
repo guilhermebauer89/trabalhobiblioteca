@@ -1,0 +1,43 @@
+﻿@model Biblioteca.Data.PerfilUsuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>PerfilUsuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantidadeLocacoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantidadeLocacoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantidadeCursos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantidadeCursos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

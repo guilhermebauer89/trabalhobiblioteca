@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Biblioteca.Data.UsuarioCurso>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listagem</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Curso.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Coordenador)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Curso.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Coordenador)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = string.Format("{0}|{1}", item.IdCurso, item.MatriculaUsuario) }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = string.Format("{0}|{1}", item.IdCurso, item.MatriculaUsuario) }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = string.Format("{0}|{1}", item.IdCurso, item.MatriculaUsuario) })
+            </td>
+        </tr>
+    }
+
+</table>
