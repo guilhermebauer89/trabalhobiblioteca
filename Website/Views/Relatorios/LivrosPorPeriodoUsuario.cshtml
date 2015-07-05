@@ -1,7 +1,7 @@
 ﻿@model Biblioteca.Data.Relatorio.RelatorioEmprestimo
 
 
-<div style="text-align: center;"><h1 style="">Livros emprestados por período e usúario</h1></div>
+<div style="text-align: center;"><h1 style="">Livros emprestados por período e usuário</h1></div>
 <br />
 @using (Html.BeginForm())
 {
@@ -21,7 +21,7 @@
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.MatriculaUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.MatriculaUsuario, "Usuário", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-3">
                 @(Html.Kendo().DropDownListFor(model => model.MatriculaUsuario)
                 .BindTo(ViewBag.MatriculaUsuario as SelectList)

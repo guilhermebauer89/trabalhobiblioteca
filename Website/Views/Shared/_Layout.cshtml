@@ -54,8 +54,8 @@
                       innerChildren.Add().Text("Livro").Url("/Livro");
                       innerChildren.Add().Text("Perfil").Url("/PerfilUsuario");
                       innerChildren.Add().Text("Unidade").Url("/Unidade");
-                      innerChildren.Add().Text("Usúario").Url("/Usuario");
-                      innerChildren.Add().Text("Curso - Usúario").Url("/UsuarioCurso");
+                      innerChildren.Add().Text("Usuário").Url("/Usuario");
+                      innerChildren.Add().Text("Curso - Usuário").Url("/UsuarioCurso");
                   });
 
               children.Add().Text("Relatorios")
@@ -73,6 +73,11 @@
     </div>
     <div class="container">
         @RenderBody()
+    </div>
+    <div class="container">
+        <footer>Fonte no <a href="https://github.com/guilhermebauer89/trabalhobiblioteca">GitHub&copy;</a>   Copyright &copy; 2015 <a href="http://www.unisul.br/wps/portal/home/">Unisul</a>.</footer>
+
+
     </div>
     <script>
         $(document).ready(function () {

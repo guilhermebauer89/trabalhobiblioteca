@@ -24,7 +24,7 @@ namespace Biblioteca.Data
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "Nome Usúario")]
+        [Display(Name = "Nome Usuário")]
         public string Nome { get; set; }
 
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
